@@ -8,6 +8,7 @@ import constants
 from enums import ResponseStatusEnum
 from utilities import check_if_array_is_empty, check_if_input_array_is_unsorted
 
+
 def binary_search(input: SearchModel) -> ResponseModel:
     
     try:
@@ -25,8 +26,11 @@ def binary_search(input: SearchModel) -> ResponseModel:
         if is_unsorted_array:
             return response_model
         
-        logging.info("Binary Search Algorithm Completed")
-        return bin_search_helper(input_array, data_to_be_searched)
+        
+        response = bin_search_helper(input_array, data_to_be_searched)
+        logging.info("Binary Search Algorithm Completed with following response : %s", response.response)
+        
+        return response
     
     except Exception as e:
         logging.exception(" The Exception occured as %s", e)
@@ -50,10 +54,10 @@ def bin_search_helper(array: list, data_to_be_searched: int):
     response = f"Data Not Found"
     
     if array[low] == data_to_be_searched:
-        response = f"{data_to_be_searched} found at index {low}"
+        response = f" Data : {data_to_be_searched} found at index {low}"
     
     if array[high] == data_to_be_searched:
-        response = f"{data_to_be_searched} found at index {high}"
+        response = f"Data: {data_to_be_searched} found at index {high}"
         
     return  ResponseModel(status_code = constants.SUCCESS_CODE, status = ResponseStatusEnum.SUCCESS, response = response)
         
@@ -63,11 +67,13 @@ def quick_sort(input: SortingModel) -> ResponseModel:
     
     try:
         input_array = input.array
-        quick_sort_helper(input_array,0,len(input_array) - 1)
         logging.info(f"Quick Sort Algorithm Started on input array: {input_array}")
+        quick_sort_helper(input_array,0,len(input_array) - 1)
+       
         
         response = f" Following is the sorted array using Quick Sort Algorithm {input_array}"
         
+        logging.info("Quick Sort Algorithm completed %s", response)
         
         return ResponseModel(status_code = constants.SUCCESS_CODE, status =  ResponseStatusEnum.SUCCESS, response = response)
                 
@@ -116,6 +122,7 @@ def bfs_traversal(input:TraversalModel) -> ResponseModel:
     try:
         graph = input.graph
         root = input.root
+        logging.info("BFS Algorithm Started on following input: graph = %s and root node = %s",graph,root)
         response_model, is_empty_array = check_if_array_is_empty(graph, bfs_traversal.__name__)
         
         if is_empty_array:
@@ -126,7 +133,7 @@ def bfs_traversal(input:TraversalModel) -> ResponseModel:
         answer = bfs_algorithm(graph, root)
         
         response = f" Following is the output array using bfs traversal algorithm:  {answer}"
-        
+        logging.info("BFS Traversal Algorithm completed with output %s", response)
         return ResponseModel(status_code = constants.SUCCESS_CODE, status =  ResponseStatusEnum.SUCCESS, response = response)
         
     except Exception as e:
