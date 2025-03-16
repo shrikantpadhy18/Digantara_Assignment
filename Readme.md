@@ -162,3 +162,22 @@ Following is the response for the above input
   "status": "Processing Successful",
   "status_code": 200
 }
+
+```
+
+## Deployment
+
+Deployed the code into free tier vercel account
+
+Steps Followed:
+
+1. Created free account in vercel
+2. Installed vercel cli using command 
+**Note**: Ensure NPM is installed in your machine
+```javascript
+ npm i -g vercel
+```
+
+3. created vercel.json
+4. deployed using following command : vercel .
+5. live link : https://digantara-shrikant.vercel.app/docs
