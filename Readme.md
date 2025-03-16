@@ -4,13 +4,13 @@
 
 **Note**  Make sure docker installed in your machine
 
-steps:
+Steps:
 1. docker-compose up --build <!-- This will build the latest docker image of the application-->
 2. Open the browser and hit the following URL: localhost:8000/docs it will open the swagger page for you where you can try all the available endpoints
 
 ## Using local machine
 
-steps:
+Steps:
 
 1. Make sure python version >= 3.10 installed in your system
 2. Go to the root directory of the project and enter
