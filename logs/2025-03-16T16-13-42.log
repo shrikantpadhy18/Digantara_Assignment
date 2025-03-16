@@ -1,0 +1,4 @@
+2025-03-16 16:13:42,328 - INFO -  services.py - [line: 18] - Binary Search Algorithm Invoked on following array: [1, 2, 3, 4, 5] and data to be found: 12
+2025-03-16 16:13:42,336 - INFO -  services.py - [line: 31] - Binary Search Algorithm Completed with following response : Data Not Found
+2025-03-16 16:14:08,895 - INFO -  services.py - [line: 18] - Binary Search Algorithm Invoked on following array: [1, 2, 3, 4, 7] and data to be found: 12
+2025-03-16 16:14:08,900 - INFO -  services.py - [line: 31] - Binary Search Algorithm Completed with following response : Data Not Found
