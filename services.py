@@ -27,7 +27,7 @@ def binary_search(input: SearchModel) -> ResponseModel:
             return response_model
         
         
-        response = bin_search_helper(input_array, data_to_be_searched)
+        response = binary_search_helper(input_array, data_to_be_searched)
         logging.info("Binary Search Algorithm Completed with following response : %s", response.response)
         
         return response
@@ -38,7 +38,7 @@ def binary_search(input: SearchModel) -> ResponseModel:
         return  ResponseModel(status_code = constants.FAILURE_CODE, status = ResponseStatusEnum.FAILURE, response = e)
     
 
-def bin_search_helper(array: list, data_to_be_searched: int):
+def binary_search_helper(array: list, data_to_be_searched: int):
     
     low = 0
     high = len(array) - 1
