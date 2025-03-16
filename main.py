@@ -11,8 +11,8 @@ from utilities import set_up_logging
 app = FastAPI()
 
 
-@app.get("/")
-def ping():
+@app.get("/health_check")
+def health_check():
     
     return {"Message": " Testing successful"}
 
