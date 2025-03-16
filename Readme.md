@@ -5,7 +5,7 @@
 **Note**  make sure docker installed in your machine
 
 steps:
-1. docker-compose up --build <!-- This will build the latest docker image of the application>
+1. docker-compose up --build <!-- This will build the latest docker image of the application-->
 2. Open the browser and hit the following URL: localhost:8000/docs it will open the swagger page for you where you can try all the available endpoints
 
 ## Using local machine
