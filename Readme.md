@@ -2,7 +2,7 @@
 
 ## Using Docker
 
-**Note**  make sure docker installed in your machine
+**Note**  Make sure docker installed in your machine
 
 steps:
 1. docker-compose up --build <!-- This will build the latest docker image of the application-->
@@ -12,8 +12,8 @@ steps:
 
 steps:
 
-1. make sure python version >= 3.10 installed in your system
-2. go to the root directory of the project and enter
+1. Make sure python version >= 3.10 installed in your system
+2. Go to the root directory of the project and enter
 ```python
   pip install -r requirements.txt
 ```
