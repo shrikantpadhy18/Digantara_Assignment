@@ -33,7 +33,9 @@ def binary_search(input: SearchModel) -> ResponseModel:
         return response
     
     except Exception as e:
-        logging.exception(" The Exception occured as %s", e)
+        logging.exception(" The Exception occurred as %s", e)
+        
+        return  ResponseModel(status_code = constants.FAILURE_CODE, status = ResponseStatusEnum.FAILURE, response = e)
     
 
 def bin_search_helper(array: list, data_to_be_searched: int):
@@ -80,6 +82,7 @@ def quick_sort(input: SortingModel) -> ResponseModel:
         
     except Exception as e:
         logging.exception(f"The Exception occurred in {quick_sort.__name__} function ", e)
+        return  ResponseModel(status_code = constants.FAILURE_CODE, status = ResponseStatusEnum.FAILURE, response = e)
         
         
     
@@ -96,25 +99,25 @@ def partition(array: list, start: int, end: int):
     
     pivot_element = array[end]
     
-    i = start - 1
+    partition_index = start - 1
     
     for j in range(start, end):
         
         if array[j] >  pivot_element:
             pass
         else:
-            i += 1
-            temp = array[i]
-            array[i] = array[j]
+            partition_index += 1
+            temp = array[partition_index]
+            array[partition_index] = array[j]
             array[j] = temp
             
             
-    i += 1
-    temp = array[i]
-    array[i] = array[end]
+    partition_index += 1
+    temp = array[partition_index]
+    array[partition_index] = array[end]
     array[end] = temp
     
-    return i
+    return partition_index
     
     
 def bfs_traversal(input:TraversalModel) -> ResponseModel:
@@ -138,6 +141,7 @@ def bfs_traversal(input:TraversalModel) -> ResponseModel:
         
     except Exception as e:
         logging.exception("The Exception occurred in bfs_traversal %s", e)
+        return  ResponseModel(status_code = constants.FAILURE_CODE, status = ResponseStatusEnum.FAILURE, response = e)
         
 
 
